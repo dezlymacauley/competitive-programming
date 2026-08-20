@@ -1,0 +1,9 @@
+[package]
+name = "rust-solutions"
+version = "0.1.0"
+edition = "2024"
+
+[workspace]
+members = [
+    "s01-sorting-algorithms"
+]
