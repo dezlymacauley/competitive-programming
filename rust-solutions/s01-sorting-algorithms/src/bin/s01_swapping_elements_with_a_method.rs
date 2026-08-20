@@ -1,5 +1,5 @@
 /*
-    ABOUT: Swapping elements with the .swap() method
+    ABOUT: Swapping elements with a method
 */
 
 fn main() {
@@ -12,6 +12,9 @@ fn main() {
     
     // Swapping 40 and 30
     list_of_numbers.swap(2, 3);
+
+
+    //_________________________________________________________________________
 
     // Printing the elements of the list, separated by a comma.
     println!("\nSorted List:");
