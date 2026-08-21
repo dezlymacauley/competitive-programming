@@ -19,11 +19,55 @@ fn bubble_sort(list: &mut Vec<u8>) {
     // STEP: 3 => Get the index of the last element
 
     let index_of_last_element: usize = list.len() - 1;
-    println!("index_of_last_element: {index_of_last_element}");
+    // println!("index_of_last_element: {index_of_last_element}");
 
     //_________________________________________________________________________
 
-    // STEP: 4 => Create a loop that will compare each index 
+    // STEP: 5 => Create a loop that will repeatedly execute the algorithm
+    // until a condition is met.
+
+    loop {
+
+        let mut at_least_one_swap_happened: bool = false;
+
+        for index in 0..index_of_last_element {
+            // NOTE: Always check that your loop is comparing
+            // the correct indexes against each other.
+
+            // println!("Comparing index {} to index {}", index, index + 1);
+            // Comparing index 0 to index 1
+            // Comparing index 1 to index 2
+            // Comparing index 2 to index 3
+            // Comparing index 3 to index 4
+            // Comparing index 4 to index 5
+
+            // STEP: 5 => Compare each element to the element next to it,
+            // and swap their positions if needed.
+
+            if list[index] > list[index + 1] {
+                // You can use Rust's native `.swap()` method
+                list.swap(index, index + 1);
+
+                // Or you can use the manual snapshot method
+                // let snapshot = list[index];
+                // list[index] = list[index + 1];
+                // list[index + 1] = snapshot;
+
+                // record that at least one swap happend.
+                at_least_one_swap_happened = true;
+            }
+        }
+
+        // If no swaps happened then that means that the list is sorted,
+        if !at_least_one_swap_happened {
+            // break out of the loop and continue with the rest of the code
+            // in the function.
+            break;
+        }
+
+    }
+
+    // STEP: 4 => Create a loop that will compare each index
     // to the next index in the list
 
     // Please note that the range is exclusive
@@ -36,27 +80,12 @@ fn bubble_sort(list: &mut Vec<u8>) {
     // to index 6 (which woud make the program crash because index 6
     // does not exist)
 
-    for index in 0..index_of_last_element {
-
-        // NOTE: Always check that your loop is comparing the correct indexes
-
-        println!("Comparing index {} to index {}", index, index + 1);
-        // Comparing index 0 to index 1
-        // Comparing index 1 to index 2
-        // Comparing index 2 to index 3
-        // Comparing index 3 to index 4
-        // Comparing index 4 to index 5
-    }
-
     // loop {
     //
     //     let mut swap_happend: bool = false;
     //
     //     for index in 0..index_of_last_element {
     //         if list[index] > list[index + 1] {
-    //             let snapshot = list[index];
-    //             list[index] = list[index + 1];
-    //             list[index + 1] = snapshot;
     //
     //             swap_happend = true;
     //         }
@@ -67,16 +96,16 @@ fn bubble_sort(list: &mut Vec<u8>) {
     //     }
     // }
 
-    // Print out the sorted list
-    // println!("\nSorted List");
-    // println!(
-    //     "{}",
-    //     list.iter()
-    //         .map(|element| element.to_string())
-    //         .collect::<Vec<String>>()
-    //         .join(", ")
-    // );
-    // println!();
+    // STEP: 7 => Print out the sorted list
+
+    println!("\nSorted List");
+    println!(
+        "{}\n",
+        list.iter()
+            .map(|element| element.to_string())
+            .collect::<Vec<String>>()
+            .join(", ")
+    );
     // Sorted List:
     // 10, 20, 30, 40, 50, 60
 }
