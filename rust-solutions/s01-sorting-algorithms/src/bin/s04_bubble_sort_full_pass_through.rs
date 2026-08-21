@@ -67,34 +67,6 @@ fn bubble_sort(list: &mut Vec<u8>) {
 
     }
 
-    // STEP: 4 => Create a loop that will compare each index
-    // to the next index in the list
-
-    // Please note that the range is exclusive
-    // E.g. If index_of_last_element is 5
-    // Then 0..5 means, index 0 to index 5 (excluding index 5)
-
-    // This is correct, because you want index 5 to be excluded.
-    // If index 5 was included you would get an "out of bounds" error,
-    // because he for loop would eventually try to compare index 5,
-    // to index 6 (which woud make the program crash because index 6
-    // does not exist)
-
-    // loop {
-    //
-    //     let mut swap_happend: bool = false;
-    //
-    //     for index in 0..index_of_last_element {
-    //         if list[index] > list[index + 1] {
-    //
-    //             swap_happend = true;
-    //         }
-    //     }
-    //
-    //     if swap_happend == false {
-    //         break;
-    //     }
-    // }
 
     // STEP: 7 => Print out the sorted list
 
